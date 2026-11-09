@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>GoatedBuy spreadsheet – Produktlinks, Größen und QC-Fotos prüfen</title>
+  <meta name="description" content="Deutschsprachiger Leitfaden zum GoatedBuy spreadsheet. Kategorien entdecken, Produktlinks prüfen, Größen vergleichen und QC-Fotos sowie Versandkosten einordnen.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#20243b">
+  <style>
+    :root{color-scheme:light;--ink:#20243b;--muted:#505568;--paper:#f7f5f0;--card:#fff;--line:#d9dae2;--lime:#e3f788}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.58 system-ui,sans-serif}
+    a{color:inherit}
+    a:focus-visible,summary:focus-visible{outline:3px solid #8e49d7;outline-offset:3px}
+    img{display:block;width:100%;height:auto}
+    h1,h2,h3,p,figure{margin:0}
+    h1,h2,h3{line-height:1.15;overflow-wrap:anywhere}
+    h1{font-size:clamp(2.45rem,5.7vw,5rem);letter-spacing:-.065em}
+    h2{font-size:clamp(1.65rem,3.7vw,2.65rem);letter-spacing:-.035em}
+    h3{font-size:1.18rem}
+    .wrap{width:min(72rem,calc(100% - 2rem));margin-inline:auto}
+    .top,.foot{background:var(--ink);color:#fff}
+    .top .wrap{display:flex;justify-content:space-between;align-items:center;gap:.8rem 1.4rem;flex-wrap:wrap;padding-block:.85rem}
+    .brand{font-weight:850;text-decoration:none}
+    .label{font-size:.78rem;font-weight:750;letter-spacing:.09em;text-transform:uppercase}
+    .hero{display:grid;grid-template-columns:1.35fr 1fr;overflow:hidden;margin-top:1.1rem;border-radius:1.25rem;background:var(--ink);color:#fff}
+    .intro{align-self:center;padding:clamp(1.3rem,4vw,3rem)}
+    .intro .label{color:var(--lime);margin-bottom:.55rem}
+    .intro p:not(.label){max-width:47ch;margin-top:.85rem;color:#eef0fa}
+    .cta{display:inline-block;margin-top:1rem;padding:.65rem 1rem;border-radius:.55rem;background:var(--lime);color:var(--ink);font-weight:780;text-decoration:none}
+    .cta:hover{text-decoration:underline}
+    .hero figure{display:grid;align-content:center;background:#fff;color:var(--ink)}
+    .hero img{aspect-ratio:4/3;object-fit:contain}
+    figcaption{padding:.5rem .75rem;font-size:.85rem;color:var(--muted)}
+    .catalog,.section{margin-block:clamp(1.7rem,4vw,3.5rem)}
+    .catalog h2,.section h2{margin-bottom:.8rem}
+    .cats,.guides,.gallery{display:grid;gap:.65rem}
+    .cats{grid-template-columns:repeat(5,minmax(0,1fr))}
+    .cats a{display:flex;align-items:center;gap:.5rem;min-height:3.1rem;padding:.55rem .65rem;border:1px solid var(--line);border-radius:.65rem;background:var(--card);text-decoration:none;font-weight:700;overflow-wrap:anywhere}
+    .cats a:hover{background:var(--lime)}
+    .cats span{color:var(--muted);font-size:.75rem;font-variant-numeric:tabular-nums}
+    .guides{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .guide{padding:clamp(1rem,2.3vw,1.5rem);border:1px solid var(--line);border-radius:.9rem;background:var(--card)}
+    .guide p,.section>p{margin-top:.65rem}
+    .guide .label{display:block;margin-bottom:.45rem;color:var(--muted)}
+    .gallery{grid-template-columns:repeat(4,minmax(0,1fr));margin-top:1rem}
+    .gallery figure{overflow:hidden;border:1px solid var(--line);border-radius:.75rem;background:#fff}
+    .gallery img{aspect-ratio:1;object-fit:contain}
+    .faq{max-width:50rem}
+    details{border-top:1px solid var(--line);padding:.75rem 0}
+    details:last-child{border-bottom:1px solid var(--line)}
+    summary{font-weight:750;cursor:pointer}
+    details p{margin-top:.45rem;padding-inline-start:1.05rem}
+    .foot .wrap{padding-block:1.2rem}
+    .foot p{margin-top:.25rem;color:#e1e3ef;font-size:.9rem}
+    @media(max-width:52rem){.cats{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    @media(max-width:40rem){.hero,.guides{grid-template-columns:1fr}.hero img{aspect-ratio:2/1}.cats,.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "de",
+    "name": "GoatedBuy spreadsheet – Produktlinks, Größen und QC-Fotos prüfen",
+    "description": "Deutschsprachiger Leitfaden zum GoatedBuy spreadsheet. Kategorien entdecken, Produktlinks prüfen, Größen vergleichen und QC-Fotos sowie Versandkosten einordnen.",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Was ist ein GoatedBuy spreadsheet?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Es ist eine Übersicht mit Produktideen und Links. Vor einer Bestellung prüfst du im ursprünglichen Angebot, ob die gewünschte Farbe und Größe verfügbar sind."}
+      },
+      {
+        "@type": "Question",
+        "name": "Wie prüfe ich einen Produktlink aus der Liste?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Öffne das ursprüngliche Angebot und vergleiche Modell, Farbe und Größe mit deinem Eintrag. Speichere die Artikelnummer und das Prüfdatum, wenn du den Fund später wieder aufrufen möchtest."}
+      },
+      {
+        "@type": "Question",
+        "name": "Was kann ich anhand von QC-Fotos beurteilen?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Fotos der Qualitätskontrolle können sichtbare Nähte, den Aufdruck und Abweichungen zwischen bestellter und fotografierter Variante zeigen. Zur Echtheit oder Haltbarkeit brauchst du weitere Nachweise."}
+      },
+      {
+        "@type": "Question",
+        "name": "Wie vergleiche ich Größen bei Sneakern und Hoodies?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Vergleiche bei Sneakern die Fußlänge in Zentimetern mit der Größentabelle für das Modell. Miss bei Hoodies Brustweite und Rückenlänge an einem flach liegenden Kleidungsstück, das dir gut passt."}
+      },
+      {
+        "@type": "Question",
+        "name": "Wie schätze ich den internationalen Versand ein?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Wähle das Lieferland und vergleiche die angebotenen Versandarten anhand von Paketgewicht und Kartonmaßen. Prüfe, ob der Anbieter nach tatsächlichem Gewicht oder Volumengewicht abrechnet."}
+      },
+      {
+        "@type": "Question",
+        "name": "Wohin führen die Kategorien auf dieser Seite?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Sie öffnen die jeweilige Produktkategorie bei CAFANS. Die gezeigten Markenbilder dienen als Stilbeispiele. Ob ein konkreter Artikel verfügbar ist, siehst du im jeweiligen Angebot."}
+      }
+    ]
+  }
+  </script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/mszkl/">
+</head>
+<body>
+  <!--
+    Recherche: Die abrufbare erste Bing-Ergebnisseite lieferte keine thematisch passenden Treffer.
+    Als Ersatz dienten öffentlich auffindbare Seiten auf goated-buy.com, goatedbuyindex.com,
+    goatedbuyspreadsheets.com, goatedspreadsheet.com, goatedbuysheet.net, mickeybuys.com,
+    goatedbuyspreadsheet.net, qcradar.com, goatedbuysheet.com und mixfittio.com.
+    Nebenbegriffe: GoatedBuy Produktlinks, GoatedBuy QC-Fotos, GoatedBuy Größenvergleich,
+    GoatedBuy Versandkosten, GoatedBuy Einkaufsleitfaden.
+  -->
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="https://www.cafans.com">www.cafans.com</a>
+      <span class="label">Einkaufsleitfaden auf Deutsch</span>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" aria-labelledby="seitentitel">
+      <div class="intro">
+        <p class="label">Fundstücke richtig vergleichen</p>
+        <h1 id="seitentitel">GoatedBuy spreadsheet</h1>
+        <p>Ein GoatedBuy spreadsheet sammelt Produktideen und Links. Mit diesem Leitfaden findest du die passende Kategorie, vergleichst Varianten und erkennst, welche Angaben du vor einer Bestellung noch prüfen solltest.</p>
+        <a class="cta" href="https://www.cafans.com">Produkte bei CAFANS ansehen</a>
+      </div>
+      <figure>
+        <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/5/3/5324c8eNike-CW2288-111_1.jpg?tr=w-720"
+          srcset="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/5/3/5324c8eNike-CW2288-111_1.jpg?tr=w-480 480w, https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/5/3/5324c8eNike-CW2288-111_1.jpg?tr=w-720 720w"
+          sizes="(max-width: 40rem) calc(100vw - 2rem), (max-width: 74rem) 43vw, 31rem"
+          width="720" height="720" alt="Weißer Nike Air Force 1 ’07 in der Seitenansicht mit weißem Swoosh"
+          fetchpriority="high" loading="eager">
+        <figcaption>Nike Air Force 1 ’07 als Stilbeispiel</figcaption>
+      </figure>
+    </section>
+
+    <nav class="catalog" aria-labelledby="kategorien">
+      <h2 id="kategorien">Kategorien auf CAFANS</h2>
+      <div class="cats">
+        <a href="https://cafans.com/category-911-Shoes.html"><span aria-hidden="true">01</span> Schuhe</a>
+        <a href="https://cafans.com/category-912-Hoodies%2FSweaters.html"><span aria-hidden="true">02</span> Hoodies und Pullover</a>
+        <a href="https://cafans.com/category-913-T-Shirts.html"><span aria-hidden="true">03</span> T-Shirts</a>
+        <a href="https://cafans.com/category-914-Jackets.html"><span aria-hidden="true">04</span> Jacken</a>
+        <a href="https://cafans.com/category-915-Pants%2FShorts.html"><span aria-hidden="true">05</span> Hosen und Shorts</a>
+        <a href="https://cafans.com/category-916-Headwear.html"><span aria-hidden="true">06</span> Kappen und Mützen</a>
+        <a href="https://cafans.com/category-917-Sets.html"><span aria-hidden="true">07</span> Bekleidungssets</a>
+        <a href="https://cafans.com/category-918-underwear%2Funderpants.html"><span aria-hidden="true">08</span> Unterwäsche</a>
+        <a href="https://cafans.com/category-919-Jersey.html"><span aria-hidden="true">09</span> Trikots</a>
+        <a href="https://cafans.com/category-920-Accessories.html"><span aria-hidden="true">10</span> Accessoires</a>
+      </div>
+    </nav>
+
+    <section class="section" aria-labelledby="ratgeber">
+      <h2 id="ratgeber">Vier Prüfungen für deine Merkliste</h2>
+      <div class="guides">
+        <article class="guide">
+          <span class="label">01 · Quelle</span>
+          <h3>GoatedBuy Produktlinks prüfen</h3>
+          <p>Öffne bei einem Fund von Weidian, Taobao oder 1688 zuerst das ursprüngliche Angebot. Gleiche Artikelnummer, Farbvariante und Größe ab. Wenn zwei Einträge dieselbe Artikelnummer haben, prüfe, ob sie verschiedene Varianten zeigen, bevor du beide speicherst.</p>
+          <p>Halte je Fund vier Angaben fest: Quelle, gewünschte Variante, Prüfdatum und den nächsten offenen Punkt. Bei einem inaktiven Produktlink helfen dir Modellname und Artikelnummer bei der erneuten Suche.</p>
+        </article>
+        <article class="guide">
+          <span class="label">02 · Passform</span>
+          <h3>Größen für Sneaker und Streetwear vergleichen</h3>
+          <p>Miss für den Sneaker-Größenvergleich beide Füße im Stehen. Gleiche die längere Fußlänge mit der Größentabelle des konkreten Modells ab. Prüfe dabei, ob die Tabelle Fußlänge oder Innenlänge angibt.</p>
+          <p>Bei Hoodies und T-Shirts vergleichst du Brustweite und Rückenlänge mit einem passenden Kleidungsstück. Miss bei Jacken zusätzlich die Ärmellänge und bei Hosen die Bundweite und Schrittlänge. Bei Kappen hilft der Kopfumfang in Zentimetern.</p>
+        </article>
+        <article class="guide">
+          <span class="label">03 · Fotos</span>
+          <h3>GoatedBuy QC-Fotos gezielt ansehen</h3>
+          <p>Vergleiche bei Lagerfotos zuerst die bestellte Farbe, das Größenetikett und die Stückzahl. Prüfe bei Sneakern die Sohlenkante und sichtbare Klebespuren, bei T-Shirts die Druckposition und bei Jacken den Reißverschluss und die Nähte.</p>
+          <p>Für Schmuck sind Nahaufnahmen vom Verschluss und von der Oberfläche hilfreich. Fehlt ein Detail, halte fest, welche Ansicht du für die Entscheidung brauchst.</p>
+        </article>
+        <article class="guide">
+          <span class="label">04 · Paket</span>
+          <h3>GoatedBuy Versandkosten einordnen</h3>
+          <p>Notiere Warenpreis, Inlandsversand und internationalen Versand getrennt. Prüfe für eine Lieferung nach Deutschland, Österreich oder in die Schweiz die Optionen für das jeweilige Zielland und rechne mögliche Einfuhrkosten in deine Planung ein.</p>
+          <p>Vergleiche bei mehreren Artikeln, wie sich Paketgewicht und Kartonmaße durch eine gemeinsame Verpackung ändern. Ein leichter, großer Karton kann je nach Versandart nach Volumengewicht berechnet werden.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="stil">
+      <h2 id="stil">Stilbeispiele für Bekleidung und Accessoires</h2>
+      <p>Die Markenbilder zeigen unterschiedliche Schnitte, Muster und Details zur Orientierung. Dieser Leitfaden ist unabhängig von GoatedBuy und den gezeigten Marken.</p>
+      <div class="gallery">
+        <figure>
+          <img src="https://image-raw.reversible.com/raw_images/06b80742f9b272bc7c38294672f0a707640964902e792e5c544f0c9b838f429c-width800"
+            width="800" height="800" loading="lazy" decoding="async" alt="Blaue Dior Oblique Daunenjacke mit Jacquardmuster">
+          <figcaption>Dior · Daunenjacke</figcaption>
+        </figure>
+        <figure>
+          <img src="https://media.gucci.com/style/DarkGray_Center_0_0_400x400/1785343518/A009U9_XJH31_2064_006_100_0000_Light-printed-cotton-jersey-t-shirt.jpg"
+            width="400" height="400" loading="lazy" decoding="async" alt="Beige-braunes Gucci T-Shirt aus Baumwolljersey mit GG-Muster">
+          <figcaption>Gucci · Jersey-T-Shirt</figcaption>
+        </figure>
+        <figure>
+          <img src="https://my.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-monogram-essential-cap--M77589_PM2_Front%20view.png?hei=360&amp;wid=360"
+            width="360" height="360" loading="lazy" decoding="async" alt="Dunkelblaue Louis Vuitton Monogram Essential Kappe mit gebogenem Schirm">
+          <figcaption>Louis Vuitton · Kappe</figcaption>
+        </figure>
+        <figure>
+          <img src="https://www.oliverjewellery.ca/cdn/shop/files/Hermes-Palladium-Plated-Orange-Enamel-Clic-H-Bracelet-w-Box_f80dab0b.jpg?v=1744110722&amp;width=480"
+            width="480" height="480" loading="lazy" decoding="async" alt="Oranger Hermès Clic H Armreif mit silberfarbenem H-Verschluss">
+          <figcaption>Hermès · Emaille-Armreif</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section faq" aria-labelledby="fragen">
+      <h2 id="fragen">Häufige Fragen</h2>
+      <details>
+        <summary>Was ist ein GoatedBuy spreadsheet?</summary>
+        <p>Es ist eine Übersicht mit Produktideen und Links. Vor einer Bestellung prüfst du im ursprünglichen Angebot, ob die gewünschte Farbe und Größe verfügbar sind.</p>
+      </details>
+      <details>
+        <summary>Wie prüfe ich einen Produktlink aus der Liste?</summary>
+        <p>Öffne das ursprüngliche Angebot und vergleiche Modell, Farbe und Größe mit deinem Eintrag. Speichere die Artikelnummer und das Prüfdatum, wenn du den Fund später wieder aufrufen möchtest.</p>
+      </details>
+      <details>
+        <summary>Was kann ich anhand von QC-Fotos beurteilen?</summary>
+        <p>Fotos der Qualitätskontrolle können sichtbare Nähte, den Aufdruck und Abweichungen zwischen bestellter und fotografierter Variante zeigen. Zur Echtheit oder Haltbarkeit brauchst du weitere Nachweise.</p>
+      </details>
+      <details>
+        <summary>Wie vergleiche ich Größen bei Sneakern und Hoodies?</summary>
+        <p>Vergleiche bei Sneakern die Fußlänge in Zentimetern mit der Größentabelle für das Modell. Miss bei Hoodies Brustweite und Rückenlänge an einem flach liegenden Kleidungsstück, das dir gut passt.</p>
+      </details>
+      <details>
+        <summary>Wie schätze ich den internationalen Versand ein?</summary>
+        <p>Wähle das Lieferland und vergleiche die angebotenen Versandarten anhand von Paketgewicht und Kartonmaßen. Prüfe, ob der Anbieter nach tatsächlichem Gewicht oder Volumengewicht abrechnet.</p>
+      </details>
+      <details>
+        <summary>Wohin führen die Kategorien auf dieser Seite?</summary>
+        <p>Sie öffnen die jeweilige Produktkategorie bei CAFANS. Die gezeigten Markenbilder dienen als Stilbeispiele. Ob ein konkreter Artikel verfügbar ist, siehst du im jeweiligen Angebot.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <a class="brand" href="https://www.cafans.com">www.cafans.com</a>
+      <p>Produktkategorien und deutschsprachige Einkaufshilfe</p>
+    </div>
+  </footer>
+</body>
+</html>
